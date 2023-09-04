@@ -23,3 +23,24 @@ class Solution {
         return a;
     }
 }
+
+
+//another approoach optimized
+class Solution {
+    public boolean searchMatrix(int[][] matrix, int target) {
+        int m = matrix[0].length-1;
+        for(int i=0;i<matrix.length;i++){
+            if(matrix[i][m]<target){
+                continue;
+            }
+            else{
+                for(int j=0;j<=m;j++){
+                    if(matrix[i][j]==target) return true;
+                }
+                break;
+            }
+        }
+        return false;
+    }
+}
+
